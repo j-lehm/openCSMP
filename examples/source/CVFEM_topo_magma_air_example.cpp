@@ -20,14 +20,16 @@
 #include "PermeabilityVisitor.h"
 #include "FailureModeVisitor.h"
 #include "PoreVolumeVisitor.h"
-#include "ModelTime.h"
-#include "ModelTimeToInteger.h"
 #include "PropertyHandle.h"
 #include "NumIntegral_dNT_op_dN_dV.h"
 #include "NumIntegral_NT_op_dNi_dV.h"
 #include "NumIntegral_NT_rhsop_N_dV.h"
+
+// Model
 #include "ANSYS_Model2D.h"
 #include "ANSYS_Model3D.h"
+#include "ModelTime.h"
+#include "ModelTimeToInteger.h"
 
 #include "time.h"
 #include "Boundary.h"
@@ -89,7 +91,7 @@ void CVFEM_topo_magma_air_example::Run()
     string      icem_mesh_file("CVFEM_topo_magma_air_example_mesh");    // ANSYS-ICEM mesh, without .asc/.dat
     string      region_file("CVFEM_topo_magma_air_example");       // region list
 
-    string      phys_var_file("PhysicalVariablesBenchmarks.txt");
+    string      phys_var_file("PhysicalVariables_topo_magma_air.txt");
 
     string      output_name("CVFEM_topo_magma_air_example_output");       // prefix for every output file
     string      restart_file("saved-CVFEM_topo_magma_air_example");     // read when restarting
