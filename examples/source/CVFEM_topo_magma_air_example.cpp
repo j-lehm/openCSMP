@@ -2,6 +2,15 @@
 //
 // SPDX-License-Identifier: LGPL-3.0-only
 
+// =====================================================================
+//  Required input files (same directory):
+//    - CVFEM_topo_magma_air_example_mesh.asc / .dat    (ANSYS-ICEM mesh)
+//    - CVFEM_topo_magma_air_example-regions.txt        (list of regions in mesh)
+//    - PhysicalVariables.txt                           (material property table)
+//    - CVFEM_topo_magma_air_example.h                  (header)
+// =====================================================================
+
+
 #include "CVFEM_topo_magma_air_example.h"
 
 // VTU output
@@ -91,7 +100,7 @@ void CVFEM_topo_magma_air_example::Run()
     string      icem_mesh_file("CVFEM_topo_magma_air_example_mesh");    // ANSYS-ICEM mesh, without .asc/.dat
     string      region_file("CVFEM_topo_magma_air_example");       // region list
 
-    string      phys_var_file("PhysicalVariables_topo_magma_air.txt");
+    string      phys_var_file("PhysicalVariables.txt");
 
     string      output_name("CVFEM_topo_magma_air_example_output");       // prefix for every output file
     string      restart_file("saved-CVFEM_topo_magma_air_example");     // read when restarting
@@ -443,7 +452,7 @@ void CVFEM_topo_magma_air_example::Run()
 
     // gradP scaling: read in PermeabilityVisitor::CalculateGradPScaling and used
     // as a multiplier on k() when 0 < gradP_sc < 1. The property default in
-    // PhysicalVariablesBenchmarks.txt is 1e-10, which would silently drop
+    // PhysicalVariables.txt is 1e-10, which would silently drop
     // permeability by ten orders of magnitude; initialise it to 1 (no correction).
     model.                      InputPropertyValue("gradP scaling",                             ScalarVariable(ANY, 1.));
 

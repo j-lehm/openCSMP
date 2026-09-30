@@ -20,11 +20,11 @@
 //  and SetPorosity(); see Table 2 of the paper for the case values.
 //
 //  Required input files (same directory):
-//    - WellTracesAndFault6C.asc / .dat   (ANSYS-ICEM mesh)
-//    - WellTracesAndFault6C-regions.txt (list of regions in mesh)
-//    - PhysicalVariables.txt   (material property table)
-//    - WellTracesAndFault6C-wells.txt    (well configuration, one [well] per well)
-//    - CVFEM_fault_well_lithium_example.h                        (header)
+//    - CVFEM_fault_well_lithium_example_mesh.asc / .dat    (ANSYS-ICEM mesh)
+//    - CVFEM_fault_well_lithium_example-regions.txt        (list of regions in mesh)
+//    - PhysicalVariables.txt                               (material property table)
+//    - CVFEM_fault_well_lithium_example-wells.txt          (well configuration, one [well] per well)
+//    - CVFEM_fault_well_lithium_example.h                  (header)
 //
 //  Linear solvers: chosen near the top of Run() (search "LINEAR SOLVER
 //  SELECTION"), separately for the reservoir and for the well Newton
@@ -99,7 +99,7 @@ void CVFEM_fault_well_lithium_example::Run() {
 
     string region_file("CVFEM_fault_well_lithium_example");
 
-    string phys_var_file("PhysicalVariables_fault_well_lithium.txt");  // Physical variables file
+    string phys_var_file("PhysicalVariables.txt");  // Physical variables file
 
     // Well configuration, named after the mesh like the regions file:
     //   <mesh>-regions.txt   list of regions
